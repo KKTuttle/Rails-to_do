@@ -24,6 +24,19 @@
   <p>There are no tasks yet!</p>
 <% end %>
 
+
+<h3>Done Tasks</h3>
+<ul>
+<% @list.tasks.each do |task| %>
+  <% if task.done %>
+
+
+    <li><%= task.description%></li>
+  <% end %>
+<% end %>
+</ul>
+
+<h3>no doneTasks</h3>
 <p><%= link_to "Add a task", new_list_task_path(@list) %></p>
 <p><%= link_to "Delete List", list_path(@list),
                         :data => {:confirm => "Are you sure?",
